@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 const RecipeContext = React.createContext();
 let Config;
 try {
-  Config = require("../config");
+  Config = require("./config");
 } catch (_) {}
 
 Config = {
