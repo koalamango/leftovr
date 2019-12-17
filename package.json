@@ -1,0 +1,22 @@
+{
+  "name": "leftovr",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "9.1.5",
+    "prettier": "^1.19.1",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
+    "styled-components": "^4.4.1"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.10.6",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.2"
+  }
+}
