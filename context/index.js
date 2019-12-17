@@ -1,18 +1,9 @@
 import React, { useState, useEffect } from "react";
 const RecipeContext = React.createContext();
-let Config;
-try {
-  Config = require("./config");
-} catch (_) {}
-
-Config = {
-  apiID: process.env.apiID || Config.apiID,
-  apiKey: process.env.apiKey || Config.apiKey,
-  apiUrl: process.env.apiUrl || Config.apiUrl,
-  preFetch: process.env.preFetch || Config.preFetch
-};
-
-const { apiID, apiKey, apiUrl, preFetch } = Config;
+const apiID = "03285e2e";
+const apiKey = "d625c83244be4f5d1d66e7fb47bfcd8f";
+const apiUrl = "https://api.edamam.com/search";
+const preFetch = `${apiUrl}?q=chicken&app_id=${apiID}&app_key=${apiKey}&from=0&to=8`;
 
 const RecipeProvider = props => {
   let url = `${apiUrl}?app_id=${apiID}&app_key=${apiKey}`;
