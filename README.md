@@ -4,10 +4,6 @@
 
 [Online Demo](https://leftovr.netlify.app/)
 
-<img src="leftovr-preview.png" width="40%">
-
-![Leftovr - Find recipes based on ingredients that you have on hand.](leftovr-preview.png)
-
 Leftovr is a responsive single page web application which allows a user 
 to enter one or more ingredients to find matching recipes.
 
@@ -19,6 +15,9 @@ The application relies on the Edamam Recipe API to supply data. Note that
 this is the free version and therefore limited to 5 requests per minute.
 
 The project is fully automated with a continuous deployment pipeline via Netlify.
+
+![Leftovr - Find recipes based on ingredients that you have on hand.](leftovr-preview.png)
+
 
 ---
 
