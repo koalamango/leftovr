@@ -4,6 +4,10 @@
 
 [Online Demo](https://leftovr.netlify.app/)
 
+<img src="leftovr-preview.png" width="40%">
+
+![Leftovr - Find recipes based on ingredients that you have on hand.](leftovr-preview.png)
+
 Leftovr is a responsive single page web application which allows a user 
 to enter one or more ingredients to find matching recipes.
 
