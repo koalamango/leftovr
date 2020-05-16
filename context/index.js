@@ -10,12 +10,15 @@ const RecipeProvider = props => {
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
+  const [current, setCurrent] = useState(1);
+  const [total, setTotal] = useState(0);
 
   const fetchRecipe = async () => {
     try {
       const recipeData = await fetch(preFetch);
-      const { hits } = await recipeData.json();
+      const { hits, count } = await recipeData.json();
       setRecipes(hits);
+      setTotal(Math.round(parseInt(count || 0, 10) / 8));
       setLoading(false);
     } catch (e) {
       if (e) {
@@ -27,10 +30,12 @@ const RecipeProvider = props => {
     e.preventDefault();
     try {
       setLoading(true);
-      const searchUrl = `${url}&q=${search}&from=0&to=12`;
+      const searchUrl = `${url}&q=${search}&from=0&to=8`;
       const searchedRecipeData = await fetch(searchUrl);
-      const { hits } = await searchedRecipeData.json();
+      const { hits, count } = await searchedRecipeData.json();
       setRecipes(hits);
+      setTotal(Math.round(parseInt(count || 0, 10) / 8));
+      handlePager(1);
       setLoading(false);
     } catch (e) {
       console.log(e);
@@ -38,6 +43,16 @@ const RecipeProvider = props => {
   };
   const handleSearchChange = e => {
     setSearch(e.target.value);
+  };
+
+  const handlePager = async e => {
+    setCurrent(e);
+    setLoading(true);
+    const searchUrl = `${url}&q=${search || 'chicken'}&from=${(e - 1) * 8}&to=${(e - 1) * 8 + 8}`;
+    const searchedRecipeData = await fetch(searchUrl);
+    const { hits } = await searchedRecipeData.json();
+    setRecipes(hits);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -50,8 +65,11 @@ const RecipeProvider = props => {
         loading,
         search,
         recipes,
+        current,
+        total,
         handleSearchChange,
-        handleSubmit
+        handleSubmit,
+        handlePager
       }}
     >
       {props.children}

@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import { COLORS } from '../components/Constants';
+import { COLORS } from "../components/Constants";
 
-const SearchResult = styled.div`
+const Wrapper = styled.div`
   background-color: ${COLORS.white};
   box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.2);
   margin-bottom: 25px;
@@ -45,34 +45,29 @@ const Info = styled.div`
     font-size: 0.8rem;
     float: left;
   }
-  span + span { float: right; }
+  span + span {
+    float: right;
+  }
 `;
 
 export default function Recipe({ recipe, serving }) {
-  const { image, label, source, url, healthLabels, calories } = recipe;
+  const { image, label, source, url, calories } = recipe;
   const perServing = Math.round(calories / serving);
   return (
-    <>
-      <SearchResult>
-        <ImageWrapper>
-          <img
-            src={image}
-            alt={label}
-            className="img-card-top"
-            style={{ height: "14rem" }}
-          />
-          <Source>{source}</Source>
-        </ImageWrapper>
-        <TextWrapper>
-          <a href={url} rel="noopener noreferrer" target="_blank">
-            <Title>{label}</Title>
-          </a>
-          <Info>
-            <span>Serves {serving}</span>
-            <span>Per serving: {perServing} kcal</span>
-          </Info>
-        </TextWrapper>
-      </SearchResult>
-    </>
+    <Wrapper>
+      <ImageWrapper>
+        <img src={image} alt={label} style={{ height: "14rem" }} />
+        <Source>{source}</Source>
+      </ImageWrapper>
+      <TextWrapper>
+        <a href={url} rel="noopener noreferrer" target="_blank">
+          <Title>{label}</Title>
+        </a>
+        <Info>
+          <span>Serves {serving}</span>
+          <span>Per serving: {perServing} kcal</span>
+        </Info>
+      </TextWrapper>
+    </Wrapper>
   );
 }
