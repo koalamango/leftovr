@@ -56,7 +56,17 @@ const Wrapper = styled.div`
       display: block;
     }
   }
-  li:first-of-type a:after {
+  button {
+    border: 0;
+    background-color: transparent;
+    &:hover, 
+    &:focus,
+    &:active,
+    &:visited {
+      border: 0;
+    }
+  }
+  li:first-of-type button:after {
     content: "‹";
   }
   li[class*="rc-pagination-item-active"] {
@@ -65,21 +75,24 @@ const Wrapper = styled.div`
       color: ${COLORS.white};
     }
   }
-  li[class="rc-pagination-jump-prev"] a:after {
+  li[class="rc-pagination-jump-prev"] button:after {
     content: "‹‹";
   }
-  li[class="rc-pagination-jump-next"] a:after {
+  li[class="rc-pagination-jump-next"] button:after {
     content: "››";
+  }
+  li[class="rc-pagination-next"] button:after {
+    content: "›";
   }
   li[aria-disabled="true"] {
     cursor: not-allowed;
     &:hover {
       background-color: transparent;
-      a {
+      button {
         color: ${COLORS.gray};
       }
     }
-    a:after {
+    button:after {
       color: ${COLORS.gray};
     }
   }
