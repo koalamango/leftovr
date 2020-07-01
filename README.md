@@ -2,7 +2,7 @@
 
 > Find recipes based on ingredients that you have on hand.
 
-[Online Demo](https://leftovr.netlify.app/)
+[Online Demo](https://leftovr.vercel.app/)
 
 Leftovr is a responsive single page web application which allows a user 
 to enter one or more ingredients to find matching recipes.
@@ -25,10 +25,11 @@ The project is fully automated with a continuous deployment pipeline via Netlify
 
 * [React](https://reactjs.org/) - Javascript frontend framework
 * [Next.js](https://nextjs.org/) - Server side rendering
+* [TypeScript](https://www.typescriptlang.org/) - A typed superset of JavaScript
 * [NPM](https://www.npmjs.com/) - Javascript package management
 * [Styled-components](https://github.com/styled-components/styled-components) -  CSS in JS
 * [Edamam](https://www.edamam.com/) - Recipe Search API
-* [Netlify](https://www.netlify.com/) - CI/CD and hosting
+* [Vercel](https://vercel.com/) - CI/CD and hosting
 
 ### CI/CD
 
