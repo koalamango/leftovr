@@ -1,11 +1,27 @@
 import React, { useState, useEffect } from "react";
-const RecipeContext = React.createContext();
+
+type ContextProps = { 
+  loading: boolean,
+  search: any,
+  recipes: any,
+  current: number,
+  total: number,
+  handleSearchChange: any,
+  handleSubmit: any,
+  handlePager: any,
+};
+
+const RecipeContext = React.createContext<Partial<ContextProps>>({});
 const apiID = "03285e2e";
 const apiKey = "d625c83244be4f5d1d66e7fb47bfcd8f";
 const apiUrl = "https://api.edamam.com/search";
 const preFetch = `${apiUrl}?q=chicken&app_id=${apiID}&app_key=${apiKey}&from=0&to=8`;
 
-const RecipeProvider = props => {
+export interface RecipeProps  { 
+  children: React.ReactNode
+}
+
+const RecipeProvider = (props: RecipeProps) => {
   let url = `${apiUrl}?app_id=${apiID}&app_key=${apiKey}`;
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -26,7 +42,7 @@ const RecipeProvider = props => {
       }
     }
   };
-  const handleSubmit = async e => {
+  const handleSubmit = async (e:any) => {
     e.preventDefault();
     try {
       setLoading(true);
@@ -41,11 +57,11 @@ const RecipeProvider = props => {
       console.log(e);
     }
   };
-  const handleSearchChange = e => {
+  const handleSearchChange = (e:any) => {
     setSearch(e.target.value);
   };
 
-  const handlePager = async e => {
+  const handlePager = async (e:any) => {
     setCurrent(e);
     setLoading(true);
     const searchUrl = `${url}&q=${search || 'chicken'}&from=${(e - 1) * 8}&to=${(e - 1) * 8 + 8}`;

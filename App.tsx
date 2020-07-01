@@ -18,7 +18,7 @@ const SearchResult = styled.div`
 
 function App() {
   const appContext = useContext(RecipeContext);
-  const { loading, search } = appContext;
+  const { loading } = appContext;
   return (
     <>
       <SearchBar />

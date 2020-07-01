@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import Pagination from "rc-pagination";
 import styled from "styled-components";
 import { RecipeContext } from "../context/index";
-import { BREAKPOINT, COLORS } from "./Constants";
+import { BREAKPOINT, COLORS } from "../components/Constants";
 
 const Wrapper = styled.div`
   ul {
@@ -81,7 +81,6 @@ export default function Pager() {
         defaultCurrent={current}
         current={current}
         total={total}
-        locale="en_GB"
       />
     </Wrapper>
   );

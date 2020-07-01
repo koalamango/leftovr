@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Spinner from "./Spinner";
-import { BREAKPOINT, COLORS } from "./Constants";
+import { BREAKPOINT, COLORS } from "../components/Constants";
 
 const Wrapper = styled.div`
   display: block;

@@ -25,12 +25,11 @@ export default function RecipeList() {
   return (
     <Wrapper>
       {recipes &&
-        recipes.map(recipe => {
+        recipes.map((recipe: { recipe: { uri: string | number | undefined; yield: any; }; }) => {
           return (
             <Recipe
               key={recipe.recipe.uri}
               recipe={recipe.recipe}
-              serving={recipe.recipe.yield}
             />
           );
         })}

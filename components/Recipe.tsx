@@ -50,9 +50,8 @@ const Info = styled.div`
   }
 `;
 
-export default function Recipe({ recipe, serving }) {
-  const { image, label, source, url, calories } = recipe;
-  const perServing = Math.round(calories / serving);
+export default function Recipe({ recipe } : { recipe: any }) {
+  const { image, label, source, url } = recipe;
   return (
     <Wrapper>
       <ImageWrapper>
@@ -64,8 +63,8 @@ export default function Recipe({ recipe, serving }) {
           <Title>{label}</Title>
         </a>
         <Info>
-          <span>Serves {serving}</span>
-          <span>Per serving: {perServing} kcal</span>
+          <span>Serves</span>
+          <span>Per serving: kcal</span>
         </Info>
       </TextWrapper>
     </Wrapper>
