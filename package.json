@@ -11,6 +11,7 @@
     "type-check": "tsc"
   },
   "dependencies": {
+    "@sentry/react": "^5.20.1",
     "next": "^9.4.4",
     "prettier": "^1.19.1",
     "rc-pagination": "^2.4.1",
