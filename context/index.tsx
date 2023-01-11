@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 
-type ContextProps = { 
-  loading: boolean,
-  search: any,
-  recipes: any,
-  current: number,
-  total: number,
-  handleSearchChange: any,
-  handleSubmit: any,
-  handlePager: any,
+type ContextProps = {
+  loading: boolean;
+  search: any;
+  recipes: any;
+  current: number;
+  total: number;
+  handleSearchChange: any;
+  handleSubmit: any;
+  handlePager: any;
 };
 
 const RecipeContext = React.createContext<Partial<ContextProps>>({});
@@ -17,8 +17,8 @@ const apiKey = "d625c83244be4f5d1d66e7fb47bfcd8f";
 const apiUrl = "https://api.edamam.com/search";
 const preFetch = `${apiUrl}?q=chicken&app_id=${apiID}&app_key=${apiKey}&from=0&to=8`;
 
-export interface RecipeProps  { 
-  children: React.ReactNode
+export interface RecipeProps {
+  children: React.ReactNode;
 }
 
 const RecipeProvider = (props: RecipeProps) => {
@@ -38,11 +38,11 @@ const RecipeProvider = (props: RecipeProps) => {
       setLoading(false);
     } catch (e) {
       if (e) {
-        console.log(e.message, "Try updating the API key in App.js");
+        console.log("Try updating the API key in App.js");
       }
     }
   };
-  const handleSubmit = async (e:any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     try {
       setLoading(true);
@@ -57,14 +57,15 @@ const RecipeProvider = (props: RecipeProps) => {
       console.log(e);
     }
   };
-  const handleSearchChange = (e:any) => {
+  const handleSearchChange = (e: any) => {
     setSearch(e.target.value);
   };
 
-  const handlePager = async (e:any) => {
+  const handlePager = async (e: any) => {
     setCurrent(e);
     setLoading(true);
-    const searchUrl = `${url}&q=${search || 'chicken'}&from=${(e - 1) * 8}&to=${(e - 1) * 8 + 8}`;
+    const searchUrl = `${url}&q=${search || "chicken"}&from=${(e - 1) *
+      8}&to=${(e - 1) * 8 + 8}`;
     const searchedRecipeData = await fetch(searchUrl);
     const { hits } = await searchedRecipeData.json();
     setRecipes(hits);
@@ -85,7 +86,7 @@ const RecipeProvider = (props: RecipeProps) => {
         total,
         handleSearchChange,
         handleSubmit,
-        handlePager
+        handlePager,
       }}
     >
       {props.children}
