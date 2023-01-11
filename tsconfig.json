@@ -1,27 +1,36 @@
 {
   "compilerOptions": {
-  "allowJs": true,
-  "allowSyntheticDefaultImports": true,
-  "alwaysStrict": true,
-  "esModuleInterop": true,
-  "forceConsistentCasingInFileNames": true,
-  "isolatedModules": true,
-  "jsx": "preserve",
-  "lib": ["dom", "es2017"],
-  "module": "esnext",
-  "moduleResolution": "node",
-  "noEmit": true,
-  "noFallthroughCasesInSwitch": true,
-  "noUnusedLocals": true,
-  "noUnusedParameters": true,
-  "resolveJsonModule": true,
-  "removeComments": false,
-  "preserveConstEnums": true,
-  "sourceMap": true,
-  "skipLibCheck": true,
-  "strict": true,
-  "target": "esnext",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "alwaysStrict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "lib": [
+      "dom",
+      "es2017"
+    ],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "resolveJsonModule": true,
+    "removeComments": false,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "esnext",
+    "incremental": true
   },
-  "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx"]
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ]
 }

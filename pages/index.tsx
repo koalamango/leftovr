@@ -80,11 +80,6 @@ const Home = () => (
   <RecipeProvider>
     <Head>
       <title>Leftovr | Recipe finder by ingredients</title>
-      <link
-        href="https://fonts.googleapis.com/css?family=Oswald|Raleway:400,600|Contrail+One"
-        rel="stylesheet"
-        key="google-font-cabin"
-      />
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <Container>
@@ -92,7 +87,7 @@ const Home = () => (
       <Logo>Leftovr</Logo>
       <App />
       <Footer>
-        <p>Copyright &copy; {(new Date().getFullYear())}. All rights reserved.</p>
+        <p>Copyright &copy; {new Date().getFullYear()}. All rights reserved.</p>
       </Footer>
     </Container>
   </RecipeProvider>
